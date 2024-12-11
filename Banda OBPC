@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Músicas</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5dc; /* Bege claro */
+            color: #333; /* Texto escuro */
+        }
+
+        /* Cabeçalho */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff; /* Branco */
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+            color: #333;
+        }
+        
+        #logo {
+        height: 50px; /* Tamanho do logotipo */
+        max-width: 100px;
+    }
+    
+        /* Tabela */
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f8f2;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        tr:hover {
+            background-color: #eee;
+        }
+
+        /* Links */
+        a {
+            text-decoration: none;
+            color: #007BFF; /* Azul */
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #0056b3; /* Azul mais escuro */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Músicas - Banda OBPC Cid. Leonor</h1>
+    <input type="text" id="searchInput" placeholder="Pesquisar por cantor ou música" onkeyup="searchMusic()">
+    <table id="musicTable">
+        <thead>
+            <tr>
+                <td>Aline Barros</td>
+                <td>Bem Aventurado</td>
+                <td><a href="https://www.cifraclub.com.br/aline-barros/bem-aventurado/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/aline-barros/bem-aventurado/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Aline Barros</td>
+                <td>Consagração</td>
+                <td><a href="https://www.cifraclub.com.br/aline-barros/consagracao/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/aline-barros/consagracao/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Aline Barros</td>
+                <td>Espero em Ti</td>
+                <td><a href="https://www.cifraclub.com.br/aline-barros/espero-em-ti/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/aline-barros/espero-em-ti/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Aline Barros</td>
+                <td>Poder para Salvar</td>
+                <td><a href="https://www.cifraclub.com.br/aline-barros/poder-para-salvar/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/aline-barros/poder-para-salvar/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Aline Barros</td>
+                <td>Sonda-me, Usa-me</td>
+                <td><a href="https://www.cifraclub.com.br/aline-barros/sonda-me-usa-me/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/aline-barros/sonda-me-usa-me/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Aline Barros</td>
+                <td>Te Adorar é o Meu Prazer</td>
+                <td><a href="https://www.cifraclub.com.br/aline-barros/te-adorar-e-o-meu-prazer/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/aline-barros/te-adorar-e-o-meu-prazer/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Aline Barros</td>
+                <td>Vitória no Deserto</td>
+                <td><a href="https://www.cifraclub.com.br/aline-barros/vitoria-no-deserto/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/aline-barros/vitoria-no-deserto/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Diante do Trono</td>
+                <td>Canção do Apocalipse</td>
+                <td><a href="https://www.cifraclub.com.br/diante-do-trono/cancao-do-apocalipse/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/diante-do-trono/cancao-do-apocalipse/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Diante do Trono</td>
+                <td>Manancial</td>
+                <td><a href="https://www.cifraclub.com.br/diante-do-trono/manancial/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/diante-do-trono/manancial/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Diante do Trono</td>
+                <td>Me Ama</td>
+                <td><a href="https://www.cifraclub.com.br/diante-do-trono/me-ama-/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/diante-do-trono/me-ama/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Diante do Trono</td>
+                <td>Outra Vez</td>
+                <td><a href="https://www.cifraclub.com.br/diante-do-trono/outra-vez/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/diante-do-trono/outra-vez/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Diante do Trono</td>
+                <td>Príncipe da Paz</td>
+                <td><a href="https://www.cifraclub.com.br/diante-do-trono/principe-da-paz/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/diante-do-trono/principe-da-paz/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Heloisa Rosa</td>
+                <td>Há um Lugar</td>
+                <td><a href="https://www.cifraclub.com.br/heloisa-rosa/ha-um-lugar/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/heloisa-rosa/ha-um-lugar/" target="_blank">Letras.mus.br</a></td>
+            </tr>            
+            <tr>
+                <td>Lucimere</td>
+                <td>Pai Nosso</td>
+                <td><a href="https://www.cifraclub.com.br/lucimere/pai-nosso/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/lucimere/pai-nosso/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Ludmila Ferber</td>
+                <td>Nunca Pare de Lutar</td>
+                <td><a href="https://www.cifraclub.com.br/ludmila-ferber/nunca-pare-de-lutar/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/ludmila-ferber/nunca-pare-de-lutar/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Luma Elpídio</td>
+                <td>Liberta-me de Mim</td>
+                <td><a href="https://www.cifraclub.com.br/luma-elpidio/liberta-me-de-mim/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/luma-elpidio/liberta-me-de-mim/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Michele Nascimento</td>
+                <td>A Quem Enviarei</td>
+                <td><a href="https://www.cifraclub.com.br/michele-nascimento/a-quem-enviarei/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/michele-nascimento/a-quem-enviarei/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Nívea Soares</td>
+                <td>Que Se Abra os Céus</td>
+                <td><a href="https://www.cifraclub.com.br/nivea-soares/que-se-abra-os-ceus/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/nivea-soares/que-se-abra-os-ceus/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Nívea Soares</td>
+                <td>Teu Amor Não Falha</td>
+                <td><a href="https://www.cifraclub.com.br/nivea-soares/teu-amor-nao-falha/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/nivea-soares/teu-amor-nao-falha/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Aline Barros</td>
+                <td>Digno</td>
+                <td><a href="https://www.cifraclub.com.br/aline-barros/digno/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/aline-barros/digno/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Aline Barros</td>
+                <td>Primeira Essência</td>
+                <td><a href="https://www.cifraclub.com.br/aline-barros/primeira-essencia/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/aline-barros/primeira-essencia/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Cassiane</td>
+                <td>A Mensagem da Cruz</td>
+                <td><a href="https://www.cifraclub.com.br/cassiane/a-mensagem-da-cruz/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/cassiane/a-mensagem-da-cruz/" target="_blank">Letras.mus.br</a></td>
+            </tr>            
+            <tr>
+                <td>Diante do Trono</td>
+                <td>Nos Braços do Pai</td>
+                <td><a href="https://www.cifraclub.com.br/diante-do-trono/nos-bracos-do-pai/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/diante-do-trono/nos-bracos-do-pai/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Eyshila</td>
+                <td>Nada Pode Calar um Adorador</td>
+                <td><a href="https://www.cifraclub.com.br/eyshila/nada-pode-calar-um-adorador/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/eyshila/nada-pode-calar-um-adorador/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Eyshila</td>
+                <td>Tu És Fiel Senhor</td>
+                <td><a href="https://www.cifraclub.com.br/eyshila/tu-es-fiel-senhor/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/eyshila/tu-es-fiel-senhor/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Gabriela Rocha</td>
+                <td>Lugar Secreto</td>
+                <td><a href="https://www.cifraclub.com.br/gabriela-rocha/lugar-secreto/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/gabriela-rocha/lugar-secreto/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Internacional da Zona Sul</td>
+                <td>Rompendo em Fé</td>
+                <td><a href="https://www.cifraclub.com.br/internacional-da-zona-sul/rompendo-em-fe/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/internacional-da-zona-sul/rompendo-em-fe/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Isadora Pompeo</td>
+                <td>Tua Alegria</td>
+                <td><a href="https://www.cifraclub.com.br/isadora-pompeo/tua-alegria/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/isadora-pompeo/tua-alegria/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Jessica Augusto</td>
+                <td>De Nada Eu Tenho Falta</td>
+                <td><a href="https://www.cifraclub.com.br/jessica-augusto/de-nada-eu-tenho-falta/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/jessica-augusto/de-nada-eu-tenho-falta/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Julia Vitória</td>
+                <td>Nós Te Adoramos</td>
+                <td><a href="https://www.cifraclub.com.br/julia-vitoria/nos-te-adoramos/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/julia-vitoria/nos-te-adoramos/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Laura Souguellis</td>
+                <td>Em Teus Braços</td>
+                <td><a href="https://www.cifraclub.com.br/laura-souguellis/em-teus-bracos/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/laura-souguellis/em-teus-bracos/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Laura Souguellis</td>
+                <td>Santo Espírito</td>
+                <td><a href="https://www.cifraclub.com.br/laura-souguellis/santo-espirito/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/laura-souguellis/santo-espirito/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Ludmila Ferber</td>
+                <td>Os Sonhos de Deus</td>
+                <td><a href="https://www.cifraclub.com.br/ludmila-ferber/os-sonhos-de-deus/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/ludmila-ferber/os-sonhos-de-deus/" target="_blank">Letras.mus.br</a></td>
+            </tr>            
+            <tr>
+                <td>Lukas Agustinho</td>
+                <td>Deus Poderoso</td>
+                <td><a href="https://www.cifraclub.com.br/lukas-agustinho/deus-poderoso/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/lukas-agustinho/deus-poderoso/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Samuel Messias</td>
+                <td>Os Planos de Deus</td>
+                <td><a href="https://www.cifraclub.com.br/samuel-messias/os-planos-de-deus/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/samuel-messias/os-planos-de-deus/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Soraya Moraes</td>
+                <td>Última Chance</td>
+                <td><a href="https://www.cifraclub.com.br/soraya-moraes/ultima-chance/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/soraya-moraes/ultima-chance/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Voz da Verdade</td>
+                <td>Escudo</td>
+                <td><a href="https://www.cifraclub.com.br/voz-da-verdade/escudo/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/voz-da-verdade/escudo/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Aline Barros</td>
+                <td>Casa do Pai</td>
+                <td><a href="https://www.cifraclub.com.br/aline-barros/casa-do-pai/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/aline-barros/casa-do-pai/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Diante do Trono</td>
+                <td>Águas Purificadoras</td>
+                <td><a href="https://www.cifraclub.com.br/diante-do-trono/aguas-purificadoras/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/diante-do-trono/aguas-purificadoras/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Gabriela Gomes</td>
+                <td>Deus Emanuel</td>
+                <td><a href="https://www.cifraclub.com.br/gabriela-gomes/deus-emanuel/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/gabriela-gomes/deus-emanuel/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Nívea Soares</td>
+                <td>Me Esvaziar</td>
+                <td><a href="https://www.cifraclub.com.br/nivea-soares/me-esvaziar/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/nivea-soares/me-esvaziar/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Weslei Santos</td>
+                <td>O Seu Amor por Mim</td>
+                <td><a href="https://www.cifraclub.com.br/weslei-santos/o-seu-amor-por-mim/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/weslei-santos/o-seu-amor-por-mim/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>André Valadão</td>
+                <td>Abrace-me</td>
+                <td><a href="https://www.cifraclub.com.br/andre-valadao/abracame/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/andre-valadao/abracame/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Apascentar de Louvor</td>
+                <td>Toda Sorte de Benção</td>
+                <td><a href="https://www.cifraclub.com.br/apascentar-de-louvor/toda-sorte-de-bencao/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/apascentar-de-louvor/toda-sorte-de-bencao/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Discopraise</td>
+                <td>Se Eu Me Humilhar</td>
+                <td><a href="https://www.cifraclub.com.br/discopraise/se-eu-me-humilhar/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/discopraise/se-eu-me-humilhar/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Fernandinho</td>
+                <td>Como Eu Te Amo</td>
+                <td><a href="https://www.cifraclub.com.br/fernandinho/como-eu-te-amo/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/fernandinho/como-eu-te-amo/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Jhonas Serra</td>
+                <td>Furioso Oceano</td>
+                <td><a href="https://www.cifraclub.com.br/jhonas-serra/furioso-oceano/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/jhonas-serra/furioso-oceano/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Kleber Lucas</td>
+                <td>O Melhor de Deus</td>
+                <td><a href="https://www.cifraclub.com.br/kleber-lucas/o-melhor-de-deus/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/kleber-lucas/o-melhor-de-deus/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Marquinhos Gomes</td>
+                <td>Ele Não Desiste de Você</td>
+                <td><a href="https://www.cifraclub.com.br/marquinhos-gomes/ele-nao-desiste-de-voce/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/marquinhos-gomes/ele-nao-desiste-de-voce/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Regis Danese</td>
+                <td>Como Zaqueu</td>
+                <td><a href="https://www.cifraclub.com.br/regis-danese/como-zaqueu/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/regis-danese/como-zaqueu/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Regis Danese</td>
+                <td>Faz um Milagre em Mim</td>
+                <td><a href="https://www.cifraclub.com.br/regis-danese/faz-um-milagre-em-mim/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/regis-danese/faz-um-milagre-em-mim/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Samuel Messias</td>
+                <td>Todavia Me Alegrarei</td>
+                <td><a href="https://www.cifraclub.com.br/samuel-messias/todavia-me-alegrarei/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/samuel-messias/todavia-me-alegrarei/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Trazendo a Arca</td>
+                <td>Marca da Promessa</td>
+                <td><a href="https://www.cifraclub.com.br/trazendo-a-arca/marca-da-promessa/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/trazendo-a-arca/marca-da-promessa/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Vinicius Zulato</td>
+                <td>Teu Reino</td>
+                <td><a href="https://www.cifraclub.com.br/vinicius-zulato/teu-reino/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/vinicius-zulato/teu-reino/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Voz da Verdade</td>
+                <td>Deus Dormiu Lá em Casa</td>
+                <td><a href="https://www.cifraclub.com.br/voz-da-verdade/deus-dormiu-la-em-casa/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/voz-da-verdade/deus-dormiu-la-em-casa/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Voz da Verdade</td>
+                <td>Projeto no Deserto</td>
+                <td><a href="https://www.cifraclub.com.br/voz-da-verdade/projeto-no-deserto/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/voz-da-verdade/projeto-no-deserto/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>André Valadão</td>
+                <td>Pela Fé</td>
+                <td><a href="https://www.cifraclub.com.br/andre-valadao/pela-fe/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/andre-valadao/pela-fe/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Apascentar de Louvor</td>
+                <td>Deus do Impossível</td>
+                <td><a href="https://www.cifraclub.com.br/apascentar-de-louvor/deus-do-impossivel/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/apascentar-de-louvor/deus-do-impossivel/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Fernandinho</td>
+                <td>Tudo o Que Eu Quero</td>
+                <td><a href="https://www.cifraclub.com.br/fernandinho/tudo-o-que-eu-quero/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/fernandinho/tudo-o-que-eu-quero/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Gabriel Guedes</td>
+                <td>In Memorian</td>
+                <td><a href="https://www.cifraclub.com.br/gabriel-guedes/in-memorian/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/gabriel-guedes/in-memorian/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Gabriel Guedes</td>
+                <td>Nada Mais</td>
+                <td><a href="https://www.cifraclub.com.br/gabriel-guedes/nada-mais/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/gabriel-guedes/nada-mais/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Gabriel Guedes</td>
+                <td>Vitorioso És</td>
+                <td><a href="https://www.cifraclub.com.br/gabriel-guedes/vitorioso-es/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/gabriel-guedes/vitorioso-es/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Isaias Saad</td>
+                <td>Ousado Amor</td>
+                <td><a href="https://www.cifraclub.com.br/isaias-saad/ousado-amor/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/isaias-saad/ousado-amor/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Juliano Son</td>
+                <td>Só Quero Ver Você</td>
+                <td><a href="https://www.cifraclub.com.br/juliano-son/so-quero-ver-voce/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/juliano-son/so-quero-ver-voce/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Juliano Son</td>
+                <td>Vai Valer a Pena</td>
+                <td><a href="https://www.cifraclub.com.br/juliano-son/vai-valer-a-pena/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/juliano-son/vai-valer-a-pena/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Leonardo Gonçalves</td>
+                <td>Getsêmani</td>
+                <td><a href="https://www.cifraclub.com.br/leonardo-goncalves/getsemani/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/leonardo-goncalves/getsemani/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Quatro por Um</td>
+                <td>Eu Tenho um Chamado</td>
+                <td><a href="https://www.cifraclub.com.br/quatro-por-um/eu-tenho-um-chamado/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/quatro-por-um/eu-tenho-um-chamado/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Renascer Praise</td>
+                <td>Fé</td>
+                <td><a href="https://www.cifraclub.com.br/renascer-praise/fe/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/renascer-praise/fe/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Théo Rubia</td>
+                <td>Pode Morar Aqui</td>
+                <td><a href="https://www.cifraclub.com.br/theo-rubia/pode-morar-aqui/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/theo-rubia/pode-morar-aqui/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Trazendo a Arca</td>
+                <td>Invoca-me</td>
+                <td><a href="https://www.cifraclub.com.br/trazendo-a-arca/invoca-me/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/trazendo-a-arca/invoca-me/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Trazendo a Arca</td>
+                <td>Sobre as Águas</td>
+                <td><a href="https://www.cifraclub.com.br/trazendo-a-arca/sobre-as-aguas/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.letras.mus.br/trazendo-a-arca/sobre-as-aguas/" target="_blank">Letras.mus.br</a></td>
+            </tr>
+            <tr>
+                <td>Bola de Neve</td>
+                <td>Os que Confiam no Senhor</td>
+                <td><a href="https://www.cifraclub.com.br/bola-de-neve/os-que-confiam-no-senhor/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.youtube.com/watch?v=..." target="_blank">YouTube</a></td>
+            </tr>
+            <tr>
+                <td>Comunidade de Nilópolis</td>
+                <td>Não Há Deus Maior</td>
+                <td><a href="https://www.cifraclub.com.br/comunidade-de-nilopolis/nao-ha-deus-maior/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.youtube.com/watch?v=..." target="_blank">YouTube</a></td>
+            </tr>
+            <tr>
+                <td>Ludmila Ferber</td>
+                <td>Você Tem um Valor</td>
+                <td><a href="https://www.cifraclub.com.br/ludmila-ferber/voce-tem-um-valor/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.youtube.com/watch?v=..." target="_blank">YouTube</a></td>
+            </tr>
+            <tr>
+                <td>Marcos Góes</td>
+                <td>Recebi um Novo Coração</td>
+                <td><a href="https://www.cifraclub.com.br/marcos-goes/recebi-um-novo-coracao/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.youtube.com/watch?v=..." target="_blank">YouTube</a></td>
+            </tr>
+            <tr>
+                <td>Ministério Koinonya</td>
+                <td></td>
+                <td><a href="https://www.cifraclub.com.br/ministerio-koinonya/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.youtube.com/watch?v=..." target="_blank">YouTube</a></td>
+            </tr>
+            <tr>
+                <td>OBPC</td>
+                <td>Desperta Brasil</td>
+                <td><a href="https://www.cifraclub.com.br/obpc/desperta-brasil/" target="_blank">Cifra Club</a></td>
+                <td><a href="https://www.youtube.com/watch?v=..." target="_blank">YouTube</a></td>
+            </tr>                 
+        </tbody>
+    </table>
+
+    <script>
+        function searchMusic() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("musicTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                let showRow = false;
+                for (let j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            showRow = true;
+                        }
+                    }
+                }
+                if (showRow) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
